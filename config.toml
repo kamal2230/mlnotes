@@ -1,6 +1,6 @@
-baseURL = "https://teamtact.github.io/hugobase/"
+baseURL = "https://kamal2230.github.io/mlnotes/"
 languageCode = "en-us"
-title = "John Doe"
+title = "Kamal Khumar"
 theme = "berbera"
 
 pygmentsCodeFences=true
