@@ -1,32 +1,86 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>John Doe</title>
-    <link>https://teamtact.github.io/hugobase/</link>
-    <description>Recent content on John Doe</description>
+    <title>Kamal Khumar</title>
+    <link>https://kamal2230.github.io/mlnotes/</link>
+    <description>Recent content on Kamal Khumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 20 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://teamtact.github.io/hugobase/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kamal2230.github.io/mlnotes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Simple Python</title>
-      <link>https://teamtact.github.io/hugobase/python/basics/simple-python/</link>
+      <link>https://kamal2230.github.io/mlnotes/python/basics/simple-python/</link>
       <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://teamtact.github.io/hugobase/python/basics/simple-python/</guid>
+      <guid>https://kamal2230.github.io/mlnotes/python/basics/simple-python/</guid>
       <description>print(&amp;#39;Hello Toronto&amp;#39;) Hello Toronto  print(2) 2  </description>
     </item>
     
     <item>
       <title>Template</title>
-      <link>https://teamtact.github.io/hugobase/python/basics/template/</link>
+      <link>https://kamal2230.github.io/mlnotes/python/basics/template/</link>
       <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://teamtact.github.io/hugobase/python/basics/template/</guid>
+      <guid>https://kamal2230.github.io/mlnotes/python/basics/template/</guid>
       <description>print(&amp;#39;Hello Toronto&amp;#39;) Hello Toronto  print(2) 2  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kamal2230.github.io/mlnotes/python/basics/confusion_matrix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/basics/confusion_matrix/</guid>
+      <description>from sklearn.metrics import confusion_matrix, classification_report C=&amp;#34;Cat&amp;#34; F=&amp;#34;Fish&amp;#34; H=&amp;#34;Hen&amp;#34;true = [C,C,C,C,C,C,C,C,C,C, F,F,F,F,F,F,F,F,F,F, H,H,H,H,H,H,H,H,H,H,H] pred = [C,C,C,C,C,C,F,H,F,C, C,C,H,F,F,F,F,F,F,H, H,H,H,H,H,H,C,F,H,H,H]confusion_matrix(true,pred) array([[7, 2, 1], [2, 6, 2], [1, 1, 9]], dtype=int64)  print(classification_report(true,pred))  precision recall f1-score support Cat 0.70 0.70 0.70 10 Fish 0.67 0.60 0.63 10 Hen 0.75 0.82 0.78 11 accuracy 0.71 31 macro avg 0.71 0.71 0.70 31 weighted avg 0.71 0.71 0.71 31  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kamal2230.github.io/mlnotes/python/basics/list_of_classifier/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/basics/list_of_classifier/</guid>
+      <description>from sklearn.naive_bayes import MultinomialNB from sklearn.naive_bayes import GaussianNB from sklearn.naive_bayes import BernoulliNB from sklearn.svm import SVC from sklearn.neural_network import MLPClassifier from sklearn.ensemble import AdaBoostClassifier from sklearn.tree import DecisionTreeClassifier from sklearn.ensemble import RandomForestClassifier from sklearn.ensemble import GradientBoostingClassifier from sklearn.linear_model import LogisticRegression from sklearn.model_selection import GridSearchCV from sklearn.metrics import f1_score, confusion_matrixclfs = { &amp;#39;mnb&amp;#39;: MultinomialNB(), &amp;#39;gnb&amp;#39;: GaussianNB(), &amp;#39;svm1&amp;#39;: SVC(kernel=&amp;#39;linear&amp;#39;), &amp;#39;svm2&amp;#39;: SVC(kernel=&amp;#39;rbf&amp;#39;), &amp;#39;svm3&amp;#39;: SVC(kernel=&amp;#39;sigmoid&amp;#39;), &amp;#39;mlp1&amp;#39;: MLPClassifier(), &amp;#39;mlp2&amp;#39;: MLPClassifier(hidden_layer_sizes=[100, 100]), &amp;#39;ada&amp;#39;: AdaBoostClassifier(), &amp;#39;dtc&amp;#39;: DecisionTreeClassifier(), &amp;#39;rfc&amp;#39;: RandomForestClassifier(), &amp;#39;gbc&amp;#39;: GradientBoostingClassifier(), &amp;#39;lr&amp;#39;: LogisticRegression() }f1_scores = dict() for clf_name in clfs: clf = clfs[clf_name] clf.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kamal2230.github.io/mlnotes/python/basics/regplot_sample/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/basics/regplot_sample/</guid>
+      <description>import seaborn as snsa = [1,1,0,0,1,0,1,0,1,1,1,0,0] b = [0,0,1,0,1,0,1,1,0,0,0,1,1]sns.regplot(x = a, y = b , marker = &amp;#34;*&amp;#34;, color=&amp;#34;g&amp;#34;) &amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x26455742b48&amp;gt;  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kamal2230.github.io/mlnotes/python/basics/f1_score/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/basics/f1_score/</guid>
+      <description>from sklearn.metrics import f1_scoretrue = [0, 1, 2, 0, 1, 2] pred = [0, 2, 1, 0, 0, 1]f1_score(true, pred,average=None).mean() 0.26666666666666666  f1_score(true, pred,average=&amp;#34;macro&amp;#34;) 0.26666666666666666  f1_score(true, pred,average=&amp;#34;micro&amp;#34;) 0.3333333333333333  f1_score(true, pred,average=&amp;#34;weighted&amp;#34;) 0.26666666666666666  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kamal2230.github.io/mlnotes/python/basics/tfidf_vectorizer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/basics/tfidf_vectorizer/</guid>
+      <description>import pandas as pd from sklearn.feature_extraction.text import TfidfVectorizertfidf_vectorizer = TfidfVectorizer()def feature_extraction(msg): mat = pd.DataFrame(tfidf_vectorizer.fit_transform(msg).toarray(),columns=tfidf_vectorizer.get_feature_names(),index=None) return mat</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kamal2230.github.io/mlnotes/python/basics/train_test_split/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/basics/train_test_split/</guid>
+      <description>from sklearn.model_selection import train_test_splittrain_x,train_y, test_x,test_y = train_test_split(X, y, test_size=0.</description>
     </item>
     
   </channel>
