@@ -1,3 +1,12 @@
+---
+title: "Regplot Sample"
+author: "Kamal"
+date: 2020-08-11
+description: "-"
+type: technical_note
+draft: false
+---
+
 ```python
 import seaborn as sns
 ```
@@ -17,12 +26,12 @@ sns.regplot(x = a, y = b , marker = "*", color="g")
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x26455742b48>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1d80b3f4e88>
 
 
 
 
-![png](Regplot_sample_2_1.png)
+![png](Regplot_sample_3_1.png)
 
 
 

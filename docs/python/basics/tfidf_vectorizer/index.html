@@ -16,21 +16,36 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="TFIDF Vectorizer" />
+<meta property="og:description" content="-" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kamal2230.github.io/mlnotes/python/basics/tfidf_vectorizer/" /><meta property="article:published_time" content="2020-08-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-08-11T00:00:00&#43;00:00"/>
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="TFIDF Vectorizer"/>
+<meta name="twitter:description" content="-"/>
 <meta name="generator" content="Hugo 0.50" /> 
     
     
-    
-    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "TFIDF Vectorizer",
+  "url": "https://kamal2230.github.io/mlnotes/python/basics/tfidf_vectorizer/",
+  "wordCount": "16",
+  "datePublished": "2020-08-11T00:00:00&#43;00:00",
+  "dateModified": "2020-08-11T00:00:00&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Kamal"
+  },
+  "description": "-"
+}
+</script> 
 
-    <title>404 - Page Missing</title>
+    <title>TFIDF Vectorizer</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -66,7 +81,7 @@ MathJax.Hub.Config({
 
     <nav class="navbar navbar-expand-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="https://kamal2230.github.io/mlnotes/">Kamal Khumar</a>
+            <a class="navbar-brand" href="https://kamal2230.github.io/mlnotes/">John Doe</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -95,68 +110,33 @@ MathJax.Hub.Config({
         <div class="row">
             <div class="col-sm-12">
 
-                
+                 
+
+
 <article>
-  <div class="content">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="card">
-          <h1 class="card-header">
-            <center>
-              <h4>Error - Page Missing</h4>
-            </center>
-          </h1>
-          <div class="card-body">
-            <p>You have found a link that is broken. However, there is hope. Here is every single page on the site listed alphabetically. Use <code>control-f</code> (Windows) or <code>cmd-f</code> (MacOS) to search page titles.</p>
-            <ul>
-              
-              <li>
-                <a href="https://kamal2230.github.io/mlnotes/python/basics/list-append/">Append value to a list</a>
-              </li>
-              
-              <li>
-                <a href="https://kamal2230.github.io/mlnotes/python/basics/confusion_matrix/">Column Rename</a>
-              </li>
-              
-              <li>
-                <a href="https://kamal2230.github.io/mlnotes/python/basics/f1_score/">F1 Score</a>
-              </li>
-              
-              <li>
-                <a href="https://kamal2230.github.io/mlnotes/">Kamal Khumar</a>
-              </li>
-              
-              <li>
-                <a href="https://kamal2230.github.io/mlnotes/python/basics/list_of_classifier/">List of classifiers</a>
-              </li>
-              
-              <li>
-                <a href="https://kamal2230.github.io/mlnotes/python/basics/regplot_sample/">Regplot Sample</a>
-              </li>
-              
-              <li>
-                <a href="https://kamal2230.github.io/mlnotes/python/basics/simple-python/">Simple Python</a>
-              </li>
-              
-              <li>
-                <a href="https://kamal2230.github.io/mlnotes/python/basics/tfidf_vectorizer/">TFIDF Vectorizer</a>
-              </li>
-              
-              <li>
-                <a href="https://kamal2230.github.io/mlnotes/python/basics/template/">Template</a>
-              </li>
-              
-              <li>
-                <a href="https://kamal2230.github.io/mlnotes/python/basics/train_test_split/">Train-test-split</a>
-              </li>
-              
-            </ul>
-          </div>
-        </div>
-      </div>
+  <div class="technical_note">
+  <header>
+      
+    <h1 class="technical_note_title">TFIDF Vectorizer</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-08-11T00:00:00Z "> 11 Aug 2020</time>
     </div>
-  </div>
+  </header>
+  <div class="content">
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">feature_extraction</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    
+    <span class="n">mat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span><span class="n">columns</span><span class="o">=</span><span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">(),</span><span class="n">index</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mat</span></code></pre></div>
+</div>
+  <aside>
+      
+      </aside>
+
+    </div>
 </article>
+
+
 
 
             </div>

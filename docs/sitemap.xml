@@ -3,7 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/basics/confusion_matrix/</loc>
+    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/basics/f1_score/</loc>
+    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/basics/list_of_classifier/</loc>
+    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/basics/regplot_sample/</loc>
+    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kamal2230.github.io/mlnotes/python/basics/simple-python/</loc>
+    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/basics/tfidf_vectorizer/</loc>
+    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/basics/train_test_split/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -15,30 +45,6 @@
   <url>
     <loc>https://kamal2230.github.io/mlnotes/python/basics/template/</loc>
     <lastmod>2019-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/confusion_matrix/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/list_of_classifier/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/regplot_sample/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/f1_score/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/tfidf_vectorizer/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/train_test_split/</loc>
   </url>
   
   <url>

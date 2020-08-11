@@ -1,3 +1,12 @@
+---
+title: "TFIDF Vectorizer"
+author: "Kamal"
+date: 2020-08-11
+description: "-"
+type: technical_note
+draft: false
+---
+
 ```python
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer

@@ -1,3 +1,12 @@
+---
+title: "Train-test-split"
+author: "Kamal"
+date: 2020-08-11
+description: "-"
+type: technical_note
+draft: false
+---
+
 ```python
 from sklearn.model_selection import train_test_split
 ```

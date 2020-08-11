@@ -1,6 +1,6 @@
 ---
 title: "Append value to a list"
-author: "Charles"
+author: "Kamal"
 date: 2020-08-10
 description: "-"
 type: technical_note
