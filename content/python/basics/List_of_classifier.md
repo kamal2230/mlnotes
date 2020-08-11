@@ -1,3 +1,12 @@
+---
+title: "List of classifiers"
+author: "Kamal"
+date: 2020-08-11
+description: "-"
+type: technical_note
+draft: false
+---
+
 ```python
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.naive_bayes import GaussianNB

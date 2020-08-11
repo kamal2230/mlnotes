@@ -1,3 +1,12 @@
+---
+title: "Column Rename"
+author: "Kamal"
+date: 2020-08-11
+description: "-"
+type: technical_note
+draft: false
+---
+
 ```python
 from sklearn.metrics import confusion_matrix, classification_report 
 ```
