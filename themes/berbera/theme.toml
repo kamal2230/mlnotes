@@ -6,7 +6,7 @@ features = ["responsive", "blog"]
 min_version = 0.25
 
 [author]
-  name = "John Doe"
+  name = "Kamal Khumar"
   homepage = "https://johndoe.com"
 
 [based on]
