@@ -1,7 +1,7 @@
 ---
 title: "Simple Python"
-author: "TACT"
-date: 2019-04-20
+author: "Kamal"
+date: 2020-08-11
 description: "-"
 type: technical_note
 draft: false
