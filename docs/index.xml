@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Get Dummies</title>
+      <link>https://kamal2230.github.io/mlnotes/python/pandas/dummies/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/pandas/dummies/</guid>
+      <description>import pandas as pd import numpy as nps = [&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, np.nan]df = pd.DataFrame(s) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    0     0 a   1 b   2 NaN     df = pd.get_dummies(df[0], dummy_na=True) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .</description>
+    </item>
+    
+    <item>
       <title>Heatmap</title>
       <link>https://kamal2230.github.io/mlnotes/python/plots/heatmap/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
