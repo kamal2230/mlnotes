@@ -6,10 +6,28 @@
     <description>Recent content on Kamal Khumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kamal2230.github.io/mlnotes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Heatmap</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/heatmap/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/heatmap/</guid>
+      <description>import pandas as pd import seaborn as sbdf = pd.read_csv(&amp;#34;D:/Datasets/Wine Quality/winequality-white.csv&amp;#34;,sep=&amp;#34;;&amp;#34;) df.sample(5)  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    fixed acidity volatile acidity citric acid residual sugar chlorides free sulfur dioxide total sulfur dioxide density pH sulphates alcohol quality     2694 6.2 0.28 0.27 10.3 0.030 26.0 108.</description>
+    </item>
+    
+    <item>
+      <title>To_datetime</title>
+      <link>https://kamal2230.github.io/mlnotes/python/pandas/datetime/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/pandas/datetime/</guid>
+      <description>import pandas as pd Sample 1 df = pd.DataFrame({&amp;#39;year&amp;#39;: [2015, 2016], &amp;#39;month&amp;#39;: [2, 3], &amp;#39;day&amp;#39;: [4, 5]}) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    year month day     0 2015 2 4   1 2016 3 5     df = pd.to_datetime(df) df 0 2015-02-04 1 2016-03-05 dtype: datetime64[ns]  Sample 2 date = [&amp;#34;05SEP2014:12:45:54.</description>
+    </item>
     
     <item>
       <title>Apply Function</title>
@@ -58,6 +76,15 @@
     
     <item>
       <title>Regplot Sample</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/regplot_sample/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/regplot_sample/</guid>
+      <description>import seaborn as snsa = [1,1,0,0,1,0,1,0,1,1,1,0,0] b = [0,0,1,0,1,0,1,1,0,0,0,1,1]sns.regplot(x = a, y = b , marker = &amp;#34;*&amp;#34;, color=&amp;#34;g&amp;#34;) &amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x1d80b3f4e88&amp;gt;  </description>
+    </item>
+    
+    <item>
+      <title>Regplot Sample</title>
       <link>https://kamal2230.github.io/mlnotes/python/basics/regplot_sample/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
@@ -90,6 +117,15 @@
       
       <guid>https://kamal2230.github.io/mlnotes/python/basics/train_test_split/</guid>
       <description>from sklearn.model_selection import train_test_splittrain_x,train_y, test_x,test_y = train_test_split(X, y, test_size=0.</description>
+    </item>
+    
+    <item>
+      <title>nrows in read_csv</title>
+      <link>https://kamal2230.github.io/mlnotes/python/pandas/nrows/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/pandas/nrows/</guid>
+      <description> Limit Rows in read_csv import pandas as pddf = pd.read_csv(&amp;#34;name.csv&amp;#34;, nrows = 5000) #returns first 5000 rows</description>
     </item>
     
     <item>

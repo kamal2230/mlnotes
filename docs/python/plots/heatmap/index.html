@@ -16,14 +16,14 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Column Rename" />
+<meta property="og:title" content="Heatmap" />
 <meta property="og:description" content="-" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://kamal2230.github.io/mlnotes/python/basics/column-rename1/" /><meta property="article:published_time" content="2020-08-11T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-08-11T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://kamal2230.github.io/mlnotes/python/plots/heatmap/" /><meta property="article:published_time" content="2020-08-12T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-08-12T00:00:00&#43;00:00"/>
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Column Rename"/>
+<meta name="twitter:title" content="Heatmap"/>
 <meta name="twitter:description" content="-"/>
 <meta name="generator" content="Hugo 0.50" /> 
     
@@ -32,11 +32,11 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Column Rename",
-  "url": "https://kamal2230.github.io/mlnotes/python/basics/column-rename1/",
-  "wordCount": "159",
-  "datePublished": "2020-08-11T00:00:00&#43;00:00",
-  "dateModified": "2020-08-11T00:00:00&#43;00:00",
+  "headline": "Heatmap",
+  "url": "https://kamal2230.github.io/mlnotes/python/plots/heatmap/",
+  "wordCount": "133",
+  "datePublished": "2020-08-12T00:00:00&#43;00:00",
+  "dateModified": "2020-08-12T00:00:00&#43;00:00",
   "author": {
     "@type": "Person",
     "name": "Kamal"
@@ -45,7 +45,7 @@
 }
 </script> 
 
-    <title>Column Rename</title>
+    <title>Heatmap</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -117,15 +117,15 @@ MathJax.Hub.Config({
   <div class="technical_note">
   <header>
       
-    <h1 class="technical_note_title">Column Rename</h1>
+    <h1 class="technical_note_title">Heatmap</h1>
     <div class="technical_note_date">
-      <time datetime=" 2020-08-11T00:00:00Z "> 11 Aug 2020</time>
+      <time datetime=" 2020-08-12T00:00:00Z "> 12 Aug 2020</time>
     </div>
   </header>
   <div class="content">
   <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;Dialogue1&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;Vachitaya aapuuuuuuuuu&#34;</span><span class="p">,</span><span class="s2">&#34;Sing in the rain&#34;</span><span class="p">,</span><span class="s2">&#34;Valikudhu...Aludhuruve&#34;</span><span class="p">,</span><span class="s2">&#34;Mande Badharam&#34;</span><span class="p">],</span> <span class="s2">&#34;Num1&#34;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">]}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-<span class="n">df</span></code></pre></div>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sb</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;D:/Datasets/Wine Quality/winequality-white.csv&#34;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&#34;;&#34;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span></code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -144,130 +144,106 @@ MathJax.Hub.Config({
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Dialogue1</th>
-      <th>Num1</th>
+      <th>fixed acidity</th>
+      <th>volatile acidity</th>
+      <th>citric acid</th>
+      <th>residual sugar</th>
+      <th>chlorides</th>
+      <th>free sulfur dioxide</th>
+      <th>total sulfur dioxide</th>
+      <th>density</th>
+      <th>pH</th>
+      <th>sulphates</th>
+      <th>alcohol</th>
+      <th>quality</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>0</td>
-      <td>Vachitaya aapuuuuuuuuu</td>
-      <td>11</td>
+      <td>2694</td>
+      <td>6.2</td>
+      <td>0.28</td>
+      <td>0.27</td>
+      <td>10.3</td>
+      <td>0.030</td>
+      <td>26.0</td>
+      <td>108.0</td>
+      <td>0.99388</td>
+      <td>3.20</td>
+      <td>0.36</td>
+      <td>10.7</td>
+      <td>6</td>
     </tr>
     <tr>
-      <td>1</td>
-      <td>Sing in the rain</td>
-      <td>12</td>
+      <td>2542</td>
+      <td>8.9</td>
+      <td>0.27</td>
+      <td>0.34</td>
+      <td>10.7</td>
+      <td>0.029</td>
+      <td>19.5</td>
+      <td>166.0</td>
+      <td>0.99669</td>
+      <td>3.13</td>
+      <td>0.48</td>
+      <td>10.6</td>
+      <td>5</td>
     </tr>
     <tr>
-      <td>2</td>
-      <td>Valikudhu...Aludhuruve</td>
-      <td>13</td>
+      <td>1170</td>
+      <td>7.7</td>
+      <td>0.25</td>
+      <td>0.43</td>
+      <td>4.5</td>
+      <td>0.062</td>
+      <td>20.0</td>
+      <td>115.0</td>
+      <td>0.99660</td>
+      <td>3.38</td>
+      <td>0.50</td>
+      <td>9.9</td>
+      <td>6</td>
     </tr>
     <tr>
-      <td>3</td>
-      <td>Mande Badharam</td>
-      <td>14</td>
+      <td>4622</td>
+      <td>6.5</td>
+      <td>0.50</td>
+      <td>0.22</td>
+      <td>4.1</td>
+      <td>0.036</td>
+      <td>35.0</td>
+      <td>131.0</td>
+      <td>0.99020</td>
+      <td>3.26</td>
+      <td>0.55</td>
+      <td>13.0</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>3681</td>
+      <td>7.0</td>
+      <td>0.22</td>
+      <td>0.26</td>
+      <td>9.2</td>
+      <td>0.027</td>
+      <td>37.0</td>
+      <td>122.0</td>
+      <td>0.99228</td>
+      <td>3.06</td>
+      <td>0.34</td>
+      <td>12.5</td>
+      <td>8</td>
     </tr>
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Dialogue2&#34;</span><span class="p">,</span> <span class="s2">&#34;Num2&#34;</span><span class="p">]</span>
-<span class="n">df</span></code></pre></div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">d</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span><span class="o">.</span><span class="nb">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;figure.figsize&#34;</span><span class="p">:(</span><span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">)})</span> <span class="c1">#plot-size</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span><span class="p">,</span><span class="n">annot</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span></code></pre></div>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x195b1fffc48&gt;
+</code></pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Dialogue2</th>
-      <th>Num2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>Vachitaya aapuuuuuuuuu</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Sing in the rain</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Valikudhu...Aludhuruve</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Mande Badharam</td>
-      <td>14</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;Dialogue2&#34;</span><span class="p">:</span><span class="s2">&#34;Dialogue3&#34;</span><span class="p">},</span><span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
-<span class="n">df</span></code></pre></div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Dialogue3</th>
-      <th>Num2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>Vachitaya aapuuuuuuuuu</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Sing in the rain</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Valikudhu...Aludhuruve</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Mande Badharam</td>
-      <td>14</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<p><img src="heatmap_3_1.png" alt="png" /></p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
 </div>
   <aside>
