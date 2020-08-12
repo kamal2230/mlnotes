@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Defining Null Values</title>
+      <link>https://kamal2230.github.io/mlnotes/python/pandas/defining-null-values/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/pandas/defining-null-values/</guid>
+      <description>import pandas as pdd = {&amp;#39;First Score&amp;#39;:[100, 90, &amp;#34;.&amp;#34;, 95], &amp;#39;Second Score&amp;#39;: [30, 45, 56, &amp;#34;-&amp;#34;], &amp;#39;Third Score&amp;#39;:[&amp;#34;NIL&amp;#34;, 40, 80, 98]} df = pd.DataFrame(d) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    First Score Second Score Third Score     0 100 30 NIL   1 90 45 40   2 .</description>
+    </item>
+    
+    <item>
       <title>Get Dummies</title>
       <link>https://kamal2230.github.io/mlnotes/python/pandas/dummies/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
