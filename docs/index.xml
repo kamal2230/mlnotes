@@ -22,20 +22,20 @@
     
     <item>
       <title>Column Rename</title>
-      <link>https://kamal2230.github.io/mlnotes/python/basics/confusion_matrix/</link>
-      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kamal2230.github.io/mlnotes/python/basics/confusion_matrix/</guid>
-      <description>from sklearn.metrics import confusion_matrix, classification_report C=&amp;#34;Cat&amp;#34; F=&amp;#34;Fish&amp;#34; H=&amp;#34;Hen&amp;#34;true = [C,C,C,C,C,C,C,C,C,C, F,F,F,F,F,F,F,F,F,F, H,H,H,H,H,H,H,H,H,H,H] pred = [C,C,C,C,C,C,F,H,F,C, C,C,H,F,F,F,F,F,F,H, H,H,H,H,H,H,C,F,H,H,H]confusion_matrix(true,pred) array([[7, 2, 1], [2, 6, 2], [1, 1, 9]], dtype=int64)  print(classification_report(true,pred))  precision recall f1-score support Cat 0.70 0.70 0.70 10 Fish 0.67 0.60 0.63 10 Hen 0.75 0.82 0.78 11 accuracy 0.71 31 macro avg 0.71 0.71 0.70 31 weighted avg 0.71 0.71 0.71 31  </description>
-    </item>
-    
-    <item>
-      <title>Column Rename</title>
       <link>https://kamal2230.github.io/mlnotes/python/basics/column-rename1/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://kamal2230.github.io/mlnotes/python/basics/column-rename1/</guid>
       <description>import pandas as pd import numpy as npd = {&amp;#34;Dialogue1&amp;#34;: [&amp;#34;Vachitaya aapuuuuuuuuu&amp;#34;,&amp;#34;Sing in the rain&amp;#34;,&amp;#34;Valikudhu...Aludhuruve&amp;#34;,&amp;#34;Mande Badharam&amp;#34;], &amp;#34;Num1&amp;#34; : [11,12,13,14]}df = pd.DataFrame(d) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    Dialogue1 Num1     0 Vachitaya aapuuuuuuuuu 11   1 Sing in the rain 12   2 Valikudhu.</description>
+    </item>
+    
+    <item>
+      <title>Confusion Matrix</title>
+      <link>https://kamal2230.github.io/mlnotes/python/basics/confusion_matrix/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/basics/confusion_matrix/</guid>
+      <description>from sklearn.metrics import confusion_matrix, classification_report C=&amp;#34;Cat&amp;#34; F=&amp;#34;Fish&amp;#34; H=&amp;#34;Hen&amp;#34;true = [C,C,C,C,C,C,C,C,C,C, F,F,F,F,F,F,F,F,F,F, H,H,H,H,H,H,H,H,H,H,H] pred = [C,C,C,C,C,C,F,H,F,C, C,C,H,F,F,F,F,F,F,H, H,H,H,H,H,H,C,F,H,H,H]confusion_matrix(true,pred) array([[7, 2, 1], [2, 6, 2], [1, 1, 9]], dtype=int64)  print(classification_report(true,pred))  precision recall f1-score support Cat 0.70 0.70 0.70 10 Fish 0.67 0.60 0.63 10 Hen 0.75 0.82 0.78 11 accuracy 0.71 31 macro avg 0.71 0.71 0.70 31 weighted avg 0.71 0.71 0.71 31  </description>
     </item>
     
     <item>
