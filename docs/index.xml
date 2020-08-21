@@ -6,10 +6,119 @@
     <description>Recent content on Kamal Khumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kamal2230.github.io/mlnotes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Custom ECDF Function</title>
+      <link>https://kamal2230.github.io/mlnotes/python/statistics/ecdf/</link>
+      <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/statistics/ecdf/</guid>
+      <description>import numpy as npdef ecdf(data): &amp;#34;&amp;#34;&amp;#34;Compute ECDF for a one-dimensional array of measurements.&amp;#34;&amp;#34;&amp;#34; # Number of data points: n n = len(data) # x-data for the ECDF: x x = np.sort(data) # y-data for the ECDF: y y = np.arange(1, n+1) / n return x, y</description>
+    </item>
+    
+    <item>
+      <title>KFold Cross Validation</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/kfold-validation/</link>
+      <pubDate>Mon, 17 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/kfold-validation/</guid>
+      <description>from sklearn.model_selection import KFoldk_fold = KFold(n_splits=5, shuffle=True, random_state=2017) pred_test_final = 0 5 folds are specified to show that 1 fold is for test and remaining is for train set. This is repeated for the next fold and so on. Minimum needs to be 2 for d_ind, v_ind in k_fold.split(train_x): d_x, v_x = train_x.loc[d_ind, :], train_x.loc[v_ind, :] d_y, v_y = train_y[d_ind], train_y[v_ind] pred_test, model, evals_result = run_lgb(d_x, d_y, v_x, v_y, test_x) #Running LightGBM here pred_test_final += pred_test pred_test_final /= 5 pred_test_final = np.</description>
+    </item>
+    
+    <item>
+      <title>Baseline LightGBM model</title>
+      <link>https://kamal2230.github.io/mlnotes/python/lightgbm/simple-lightgbm/</link>
+      <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/lightgbm/simple-lightgbm/</guid>
+      <description>import lightgbm as lgbdef run_lgb(train_x, train_y, val_x, val_y, test_x): parameters = { &amp;#39;objective&amp;#39;: &amp;#39;regression&amp;#39;, &amp;#39;metric&amp;#39;: &amp;#39;rmse&amp;#39;, &amp;#39;num_leaves&amp;#39;: 30, &amp;#39;learning_rate&amp;#39;: 0.01, &amp;#39;bagging_fraction&amp;#39;: 0.7, &amp;#39;feature_fraction&amp;#39;: 0.7, &amp;#39;bagging_frequency&amp;#39;: 5, &amp;#39;bagging_seed&amp;#39;: 2018, &amp;#39;verbosity&amp;#39;: -1 } lgtrain = lgb.Dataset(train_x, label=train_y) lgval = lgb.Dataset(val_x, label=val_y) evals_result = {} model = lgb.train(parameters, lgtrain, 1000, valid_sets=[lgval], early_stopping_rounds=100, verbose_eval=200, evals_result=evals_result) pred_test_y = model.predict(test_x, num_iteration=model.best_iteration) return pred_test_y, model, evals_result After creating this you can call KFold cross validation in another snippet</description>
+    </item>
+    
+    <item>
+      <title>Extra Trees Regressor</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/extra-trees/</link>
+      <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/extra-trees/</guid>
+      <description>from sklearn import ensemblemodel = ensemble.ExtraTreesRegressor(n_estimators=200, max_depth=20, max_features=0.5, n_jobs=-1, random_state=0) model.fit(tr_x, tr_y) With Tuning the parameters can be even better</description>
+    </item>
+    
+    <item>
+      <title>Heatmap to show Correlation</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/correlation-heatmap/</link>
+      <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/correlation-heatmap/</guid>
+      <description>import pandas as pd import warnings warnings.filterwarnings(&amp;#34;ignore&amp;#34;) from scipy.stats import spearmanr import matplotlib.pyplot as plt import seaborn as snstrain = pd.read_csv(&amp;#39;train.csv&amp;#39;)labels = [] values = [] for col in train.columns: if col not in [&amp;#34;ID&amp;#34;, &amp;#34;target&amp;#34;]: labels.append(col) values.append(spearmanr(train[col].values, train[&amp;#39;target&amp;#39;].values)[0]) correlation_df = pd.DataFrame({&amp;#39;column_label&amp;#39;:labels, &amp;#39;correlation_val&amp;#39;:values}) correlation_df = correlation_df.sort_values(by=&amp;#39;correlation_val&amp;#39;) correlation_df = correlation_df[(correlation_df[&amp;#39;correlation_val&amp;#39;]&amp;gt;0.1) | (correlation_df[&amp;#39;correlation_val&amp;#39;]&amp;lt;-0.1)]columns = correlation_df[(correlation_df[&amp;#39;correlation_val&amp;#39;]&amp;gt;0.11) | (correlation_df[&amp;#39;correlation_val&amp;#39;]&amp;lt;-0.11)].column_label.tolist() tmp = train[columns] comat = tmp.corr(method=&amp;#39;spearman&amp;#39;) #Since we used spearman coefficient fig, ax = plt.subplots(figsize=(30,30)) sns.</description>
+    </item>
+    
+    <item>
+      <title>Plot Importance in LightGBM</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/plot-importance-of-lightgbm-model/</link>
+      <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/plot-importance-of-lightgbm-model/</guid>
+      <description>import lightgbm as lgb import matplotlib.pyplot as pltfig, ax = plt.subplots(figsize=(14,20)) lgb.plot_importance(model, max_num_features=50, height=0.8, ax=ax) #ax.grid(False) Prints in grid format plt.title(&amp;#34;LightGBM - Feature Importance&amp;#34;, fontsize=16) plt.show() </description>
+    </item>
+    
+    <item>
+      <title>Plotting Spearman Coefficient using barh</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/plot-spearman/</link>
+      <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/plot-spearman/</guid>
+      <description>import pandas as pd from scipy.stats import spearmanr import matplotlib.pyplot as plt import numpy as np import warnings #Used primarily to ignore warnings warnings.filterwarnings(&amp;#34;ignore&amp;#34;)df = pd.read_csv(&amp;#39;train.csv&amp;#39;)labels = [] values = [] for col in df.columns: if col not in [&amp;#34;ID&amp;#34;, &amp;#34;target&amp;#34;]: labels.append(col) values.append(spearmanr(df[col].values, df[&amp;#39;target&amp;#39;].values)[0]) correlation_df = pd.DataFrame({&amp;#39;column_label&amp;#39;:labels, &amp;#39;correlation_val&amp;#39;:values}) correlation_df = correlation_df.sort_values(by=&amp;#39;correlation_val&amp;#39;) correlation_df = correlation_df[(correlation_df[&amp;#39;correlation_val&amp;#39;]&amp;gt;0.1) | (correlation_df[&amp;#39;correlation_val&amp;#39;]&amp;lt;-0.1)]index = np.arange(correlation_df.shape[0]) width = 0.9 fig, ax = plt.subplots(figsize=(10,25)) rec = ax.barh(index, np.array(correlation_df.correlation_val.values), color=&amp;#39;r&amp;#39;) ax.</description>
+    </item>
+    
+    <item>
+      <title>Spearman Coefficient</title>
+      <link>https://kamal2230.github.io/mlnotes/python/scipy/spearman-coefficient/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/scipy/spearman-coefficient/</guid>
+      <description>import pandas as pd from scipy.stats import spearmanr import numpy as np import warnings #Used primarily to ignore warnings warnings.filterwarnings(&amp;#34;ignore&amp;#34;)df = pd.read_csv(&amp;#39;train.csv&amp;#39;)labels = [] values = [] for col in df.columns: if col not in [&amp;#34;ID&amp;#34;, &amp;#34;target&amp;#34;]: labels.append(col) values.append(spearmanr(df[col].values, df[&amp;#39;target&amp;#39;].values)[0]) correlation_df = pd.DataFrame({&amp;#39;column_label&amp;#39;:labels, &amp;#39;correlation_val&amp;#39;:values}) correlation_df = correlation_df.sort_values(by=&amp;#39;correlation_val&amp;#39;) correlation_df = correlation_df[(correlation_df[&amp;#39;correlation_val&amp;#39;]&amp;gt;0.1) | (correlation_df[&amp;#39;correlation_val&amp;#39;]&amp;lt;-0.1)] correlation_df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .</description>
+    </item>
+    
+    <item>
+      <title>Better way to show Left Skewed Distributions</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/log-of-right-skewed-distribution/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/log-of-right-skewed-distribution/</guid>
+      <description>import pandas as pd import matplotlib.pyplot as plt import seaborn as snsdf = pd.read_csv(&amp;#39;train.csv&amp;#39;)plt.figure(figsize=(12,8)) sns.distplot(df[&amp;#34;target&amp;#34;].values, bins=50, kde=False) plt.xlabel(&amp;#39;Test&amp;#39;, fontsize=12) plt.title(&amp;#34;Test Histogram&amp;#34;, fontsize=14) plt.show() This is a left skewed distribution. The basis of scoring will vary if this is what they give. Best way to deal with it is show it in a log scale
+import numpy as np #For log function plt.figure(figsize=(12,8)) #Define size of figure sns.distplot(np.log1p(df[&amp;#34;target&amp;#34;].values), bins=50, kde=False) plt.xlabel(&amp;#39;Test&amp;#39;, fontsize=12) plt.</description>
+    </item>
+    
+    <item>
+      <title>Categorical Heatmap</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/categorical-heatmap/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/categorical-heatmap/</guid>
+      <description>import numpy as np import matplotlib import matplotlib.pyplot as pltvegetables = [&amp;#34;cucumber&amp;#34;, &amp;#34;tomato&amp;#34;, &amp;#34;lettuce&amp;#34;, &amp;#34;asparagus&amp;#34;, &amp;#34;potato&amp;#34;, &amp;#34;wheat&amp;#34;, &amp;#34;barley&amp;#34;] farmers = [&amp;#34;Farmer Joe&amp;#34;, &amp;#34;Upland Bros.&amp;#34;, &amp;#34;Smith Gardening&amp;#34;, &amp;#34;Agrifun&amp;#34;, &amp;#34;Organiculture&amp;#34;, &amp;#34;BioGoods Ltd.&amp;#34;, &amp;#34;Cornylee Corp.&amp;#34;] harvest = np.array([[0.8, 2.4, 2.5, 3.9, 0.0, 4.0, 0.0], [2.4, 0.0, 4.0, 1.0, 2.7, 0.0, 0.0], [1.1, 2.4, 0.8, 4.3, 1.9, 4.4, 0.0], [0.6, 0.0, 0.3, 0.0, 3.1, 0.0, 0.0], [0.7, 1.7, 0.6, 2.6, 2.2, 6.2, 0.0], [1.3, 1.</description>
+    </item>
+    
+    <item>
+      <title>Define size of Figure</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/size-of-figure/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/size-of-figure/</guid>
+      <description>import matplotlib.pyplot as plt import pandas as pddata = {&amp;#39;fruits&amp;#39;: [&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;mango&amp;#39;, &amp;#39;orange&amp;#39;], &amp;#39;price&amp;#39;:[4, 7, 12, 10]}df = pd.DataFrame(data) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    fruits price     0 apple 4   1 banana 7   2 mango 12   3 orange 10     plt.</description>
+    </item>
+    
+    <item>
+      <title>Bar plot</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/basic-bar-plot/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/basic-bar-plot/</guid>
+      <description>import matplotlib.pyplot as plt import pandas as pddata = {&amp;#39;fruits&amp;#39;: [&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;mango&amp;#39;, &amp;#39;orange&amp;#39;], &amp;#39;price&amp;#39;:[4, 7, 12, 10]}df = pd.DataFrame(data) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    fruits price     0 apple 4   1 banana 7   2 mango 12   3 orange 10     plt.</description>
+    </item>
     
     <item>
       <title>Defining Null Values</title>
@@ -39,6 +148,79 @@
     </item>
     
     <item>
+      <title>Histogram</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/histogram/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/histogram/</guid>
+      <description>import pandas as pd import matplotlib.pyplot as pltdef sent_length(message): return (len(message))data = [&amp;#39;Vachitaya aapuuuuuuuuu&amp;#39;,&amp;#39;Sing in the rain&amp;#39; ,&amp;#39;Great power comes wih great responsibility&amp;#39;] df = pd.DataFrame(data, columns = [&amp;#39;Sent&amp;#39;]) df[&amp;#39;len&amp;#39;] = df[&amp;#39;Sent&amp;#39;].apply(sent_length) plt.hist(df[&amp;#39;len&amp;#39;], bins=15) (array([1., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1.]), array([16. , 17.73333333, 19.46666667, 21.2 , 22.93333333, 24.66666667, 26.4 , 28.13333333, 29.86666667, 31.6 , 33.33333333, 35.06666667, 36.8 , 38.53333333, 40.26666667, 42. ]), &amp;lt;BarContainer object of 15 artists&amp;gt;)  </description>
+    </item>
+    
+    <item>
+      <title>Horizontal Bar Chart</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/horizontal-bar-chart/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/horizontal-bar-chart/</guid>
+      <description>import matplotlib.pyplot as plt import pandas as pddata = {&amp;#39;fruits&amp;#39;: [&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;mango&amp;#39;, &amp;#39;orange&amp;#39;], &amp;#39;price&amp;#39;:[4, 7, 12, 10]}df = pd.DataFrame(data) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    fruits price     0 apple 4   1 banana 7   2 mango 12   3 orange 10     plt.</description>
+    </item>
+    
+    <item>
+      <title>Joint plot in Matplotlib</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/joint-plot-matplotlib/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/joint-plot-matplotlib/</guid>
+      <description>Joint plot is generally easy with Seaborn with the command
+import matplotlib.pyplot as plt plt.Figure.add_axes plt.Figure.add_subplot plt.Figure.add_gridspec plt.Axes.scatter plt.Axes.hist import numpy as npnp.random.seed(19680801) x = np.random.randn(1000) y = np.random.randn(1000)def scatter_hist(x, y, ax, ax_histx, ax_histy): # no labels ax_histx.tick_params(axis=&amp;#34;x&amp;#34;, labelbottom=False) ax_histy.tick_params(axis=&amp;#34;y&amp;#34;, labelleft=False) # the scatter plot: ax.scatter(x, y) # now determine nice limits by hand: binwidth = 0.25 xymax = max(np.max(np.abs(x)), np.max(np.abs(y))) lim = (int(xymax/binwidth) + 1) * binwidth bins = np.</description>
+    </item>
+    
+    <item>
+      <title>Line Plot</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/line-plot/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/line-plot/</guid>
+      <description>import matplotlib.pyplot as plt import pandas as pddata1 = {&amp;#39;objects&amp;#39;: [&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;mango&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;tomato&amp;#39;, &amp;#39;potato&amp;#39;], &amp;#39;price&amp;#39;:[4, 7, 12, 10, 9, 14]}plt.plot(data1[&amp;#39;objects&amp;#39;], data1[&amp;#39;price&amp;#39;]) [&amp;lt;matplotlib.lines.Line2D at 0x7fe35bfb3760&amp;gt;]  </description>
+    </item>
+    
+    <item>
+      <title>Plotting Categories using Subplots</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/plotting-categories/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/plotting-categories/</guid>
+      <description>import matplotlib.pyplot as pltdata = {&amp;#39;apple&amp;#39;: 4, &amp;#39;banana&amp;#39;: 7, &amp;#39;mango&amp;#39;: 12, &amp;#39;orange&amp;#39;: 10} fruit_names = list(data.keys()) prices = list(data.values())fig, ax = plt.subplots(1, 3, figsize=(9, 3), sharey=True) ax[0].bar(fruit_names, prices) ax[1].scatter(fruit_names, prices) ax[2].plot(fruit_names, prices) fig.suptitle(&amp;#39;Plottting Categories&amp;#39;) Text(0.5, 0.98, &#39;Plottting Categories&#39;)  </description>
+    </item>
+    
+    <item>
+      <title>Plotting bar graph with categories</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/categorical-bar-plot/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/categorical-bar-plot/</guid>
+      <description>import matplotlib.pyplot as plt import pandas as pddata = [[&amp;#39;Hello mate&amp;#39;, 0], [&amp;#39;xxXSADF&amp;#39;, 1], [&amp;#39;GG boys&amp;#39;, 0]] df = pd.DataFrame(data, columns=[&amp;#39;sentence&amp;#39;, &amp;#39;spam_ham&amp;#39;]) class_counts = pd.value_counts(df[&amp;#39;spam_ham&amp;#39;], sort = True) class_counts.plot(kind = &amp;#39;bar&amp;#39;, rot=0, color=[&amp;#39;blue&amp;#39;,&amp;#39;red&amp;#39;]) #Added colors as a list  plt.title(&amp;#39;Counts of Ham/Spam&amp;#39;) plt.xticks(range(2), [&amp;#39;Ham&amp;#39;, &amp;#39;Spam&amp;#39;]) plt.xlabel(&amp;#34;Class&amp;#34;) plt.ylabel(&amp;#34;Count&amp;#34;) Text(0, 0.5, &#39;Count&#39;)  </description>
+    </item>
+    
+    <item>
+      <title>Subplots that share X axis</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/subplots/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/subplots/</guid>
+      <description>import matplotlib.pyplot as pltdata1 = {&amp;#39;objects&amp;#39;: [&amp;#39;apple&amp;#39;, &amp;#39;banana&amp;#39;, &amp;#39;mango&amp;#39;, &amp;#39;orange&amp;#39;, &amp;#39;tomato&amp;#39;, &amp;#39;potato&amp;#39;], &amp;#39;price&amp;#39;:[4, 7, 12, 10, 9, 14]}fig, ax = plt.subplots(2, 1, sharex=True) ax[0].bar(data1[&amp;#39;objects&amp;#39;], data1[&amp;#39;price&amp;#39;]) ax[1].plot(data1[&amp;#39;objects&amp;#39;], data1[&amp;#39;price&amp;#39;]) fig.suptitle(&amp;#39;Subplot example&amp;#39;) Text(0.5, 0.98, &#39;Subplot example&#39;)  </description>
+    </item>
+    
+    <item>
+      <title>Subplots using GridSpec</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/grid-spec/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/grid-spec/</guid>
+      <description>import matplotlib.pyplot as plt from matplotlib.pyplot import GridSpec fig2 = plt.figure(constrained_layout=True) spec2 = GridSpec(ncols=2, nrows=2, figure=fig2) f2_ax1 = fig2.add_subplot(spec2[0, 0]) f2_ax2 = fig2.add_subplot(spec2[0, 1]) f2_ax3 = fig2.add_subplot(spec2[1, 0]) f2_ax4 = fig2.add_subplot(spec2[1, 1]) Here we need to create a separate instance for the Grid Spec whereas for Subplots we just create the instance along with the Fig object</description>
+    </item>
+    
+    <item>
       <title>To_datetime</title>
       <link>https://kamal2230.github.io/mlnotes/python/pandas/datetime/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
@@ -48,48 +230,66 @@
     </item>
     
     <item>
+      <title>Violin Plot</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/violin-plot/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/violin-plot/</guid>
+      <description>import matplotlib.pyplot as plt import numpy as npimport numpy as np np.random.seed(10) collectn_1 = np.random.normal(100, 10, 200) collectn_2 = np.random.normal(80, 30, 200) collectn_3 = np.random.normal(90, 20, 200) collectn_4 = np.random.normal(70, 25, 200) data_to_plot = [collectn_1, collectn_2, collectn_3, collectn_4] fig, ax = plt.subplots(1, 1) bp = ax.violinplot(data_to_plot) plt.show() </description>
+    </item>
+    
+    <item>
       <title>Apply Function</title>
-      <link>https://kamal2230.github.io/mlnotes/python/basics/custom-lambda-dataframe1/</link>
+      <link>https://kamal2230.github.io/mlnotes/python/pandas/custom-lambda-dataframe1/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kamal2230.github.io/mlnotes/python/basics/custom-lambda-dataframe1/</guid>
+      <guid>https://kamal2230.github.io/mlnotes/python/pandas/custom-lambda-dataframe1/</guid>
       <description>import pandas as pd import numpy as npd = [&amp;#34;Vachitaya aapuuuuuuuuu&amp;#34;,&amp;#34;Sing in the rain&amp;#34;,&amp;#34;Valikudhu...Aludhuruve&amp;#34;,&amp;#34;Mande Badharam&amp;#34;]df = pd.DataFrame(d, columns = [&amp;#39;Dialogue&amp;#39;]) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    Dialogue     0 Vachitaya aapuuuuuuuuu   1 Sing in the rain   2 Valikudhu...Aludhuruve   3 Mande Badharam     def func(msg): return len(msg)df[&amp;#34;Length&amp;#34;] = df[&amp;#34;Dialogue&amp;#34;].</description>
     </item>
     
     <item>
       <title>Column Rename</title>
-      <link>https://kamal2230.github.io/mlnotes/python/basics/column-rename1/</link>
+      <link>https://kamal2230.github.io/mlnotes/python/pandas/column-rename1/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kamal2230.github.io/mlnotes/python/basics/column-rename1/</guid>
+      <guid>https://kamal2230.github.io/mlnotes/python/pandas/column-rename1/</guid>
       <description>import pandas as pd import numpy as npd = {&amp;#34;Dialogue1&amp;#34;: [&amp;#34;Vachitaya aapuuuuuuuuu&amp;#34;,&amp;#34;Sing in the rain&amp;#34;,&amp;#34;Valikudhu...Aludhuruve&amp;#34;,&amp;#34;Mande Badharam&amp;#34;], &amp;#34;Num1&amp;#34; : [11,12,13,14]}df = pd.DataFrame(d) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    Dialogue1 Num1     0 Vachitaya aapuuuuuuuuu 11   1 Sing in the rain 12   2 Valikudhu.</description>
     </item>
     
     <item>
-      <title>Confusion Matrix</title>
-      <link>https://kamal2230.github.io/mlnotes/python/basics/confusion_matrix/</link>
+      <title>Counter &amp; Most Common</title>
+      <link>https://kamal2230.github.io/mlnotes/python/spacy/tokens/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kamal2230.github.io/mlnotes/python/basics/confusion_matrix/</guid>
-      <description>from sklearn.metrics import confusion_matrix, classification_report C=&amp;#34;Cat&amp;#34; F=&amp;#34;Fish&amp;#34; H=&amp;#34;Hen&amp;#34;true = [C,C,C,C,C,C,C,C,C,C, F,F,F,F,F,F,F,F,F,F, H,H,H,H,H,H,H,H,H,H,H] pred = [C,C,C,C,C,C,F,H,F,C, C,C,H,F,F,F,F,F,F,H, H,H,H,H,H,H,C,F,H,H,H]confusion_matrix(true,pred) array([[7, 2, 1], [2, 6, 2], [1, 1, 9]], dtype=int64)  print(classification_report(true,pred))  precision recall f1-score support Cat 0.70 0.70 0.70 10 Fish 0.67 0.60 0.63 10 Hen 0.75 0.82 0.78 11 accuracy 0.71 31 macro avg 0.71 0.71 0.70 31 weighted avg 0.71 0.71 0.71 31  </description>
+      <guid>https://kamal2230.github.io/mlnotes/python/spacy/tokens/</guid>
+      <description>from collections import Countermost_common_tokens = Counter(&amp;#39; List_of_string &amp;#39;).</description>
     </item>
     
     <item>
       <title>F1 Score</title>
-      <link>https://kamal2230.github.io/mlnotes/python/basics/f1_score/</link>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/f1_score/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kamal2230.github.io/mlnotes/python/basics/f1_score/</guid>
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/f1_score/</guid>
       <description>from sklearn.metrics import f1_scoretrue = [0, 1, 2, 0, 1, 2] pred = [0, 2, 1, 0, 0, 1]f1_score(true, pred,average=None).mean() 0.26666666666666666  f1_score(true, pred,average=&amp;#34;macro&amp;#34;) 0.26666666666666666  f1_score(true, pred,average=&amp;#34;micro&amp;#34;) 0.3333333333333333  f1_score(true, pred,average=&amp;#34;weighted&amp;#34;) 0.26666666666666666  </description>
     </item>
     
     <item>
       <title>List of classifiers</title>
-      <link>https://kamal2230.github.io/mlnotes/python/basics/list_of_classifier/</link>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/list_of_classifier/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kamal2230.github.io/mlnotes/python/basics/list_of_classifier/</guid>
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/list_of_classifier/</guid>
       <description>from sklearn.naive_bayes import MultinomialNB from sklearn.naive_bayes import GaussianNB from sklearn.naive_bayes import BernoulliNB from sklearn.svm import SVC from sklearn.neural_network import MLPClassifier from sklearn.ensemble import AdaBoostClassifier from sklearn.tree import DecisionTreeClassifier from sklearn.ensemble import RandomForestClassifier from sklearn.ensemble import GradientBoostingClassifier from sklearn.linear_model import LogisticRegression from sklearn.model_selection import GridSearchCV from sklearn.metrics import f1_score, confusion_matrixclfs = { &amp;#39;mnb&amp;#39;: MultinomialNB(), &amp;#39;gnb&amp;#39;: GaussianNB(), &amp;#39;svm1&amp;#39;: SVC(kernel=&amp;#39;linear&amp;#39;), &amp;#39;svm2&amp;#39;: SVC(kernel=&amp;#39;rbf&amp;#39;), &amp;#39;svm3&amp;#39;: SVC(kernel=&amp;#39;sigmoid&amp;#39;), &amp;#39;mlp1&amp;#39;: MLPClassifier(), &amp;#39;mlp2&amp;#39;: MLPClassifier(hidden_layer_sizes=[100, 100]), &amp;#39;ada&amp;#39;: AdaBoostClassifier(), &amp;#39;dtc&amp;#39;: DecisionTreeClassifier(), &amp;#39;rfc&amp;#39;: RandomForestClassifier(), &amp;#39;gbc&amp;#39;: GradientBoostingClassifier(), &amp;#39;lr&amp;#39;: LogisticRegression() }f1_scores = dict() for clf_name in clfs: clf = clfs[clf_name] clf.</description>
+    </item>
+    
+    <item>
+      <title>Normalization using spaCy</title>
+      <link>https://kamal2230.github.io/mlnotes/python/spacy/normalize-using-spacy/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/spacy/normalize-using-spacy/</guid>
+      <description>import spacy from spacy.lang.en.stop_words import STOP_WORDS nlp = spacy.load(&amp;#39;en_core_web_md&amp;#39;)def normalize(msg): doc = nlp(msg) res=[] #for sent in doc.sents: # print(sent.text) for token in doc: if(token.is_stop or token.is_digit or token.is_punct or token.is_oov): pass else: res.append(token.lemma_.lower()) return resnormalize(&amp;#39;spaCy is an open-source software library for advanced natural language processing, written in the programming languages Python and Cython. The library is published under the MIT license and its main developers are Matthew Honnibal and Ines Montani, the founders of the software company Explosion.</description>
     </item>
     
     <item>
@@ -102,38 +302,20 @@
     </item>
     
     <item>
-      <title>Regplot Sample</title>
-      <link>https://kamal2230.github.io/mlnotes/python/basics/regplot_sample/</link>
-      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kamal2230.github.io/mlnotes/python/basics/regplot_sample/</guid>
-      <description>import seaborn as snsa = [1,1,0,0,1,0,1,0,1,1,1,0,0] b = [0,0,1,0,1,0,1,1,0,0,0,1,1]sns.regplot(x = a, y = b , marker = &amp;#34;*&amp;#34;, color=&amp;#34;g&amp;#34;) &amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x1d80b3f4e88&amp;gt;  </description>
-    </item>
-    
-    <item>
-      <title>Simple Python</title>
-      <link>https://kamal2230.github.io/mlnotes/python/basics/simple-python/</link>
-      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kamal2230.github.io/mlnotes/python/basics/simple-python/</guid>
-      <description>print(&amp;#39;Hello Toronto&amp;#39;) Hello Toronto  print(2) 2  </description>
-    </item>
-    
-    <item>
       <title>TFIDF Vectorizer</title>
-      <link>https://kamal2230.github.io/mlnotes/python/basics/tfidf_vectorizer/</link>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/tfidf_vectorizer/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kamal2230.github.io/mlnotes/python/basics/tfidf_vectorizer/</guid>
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/tfidf_vectorizer/</guid>
       <description>import pandas as pd from sklearn.feature_extraction.text import TfidfVectorizertfidf_vectorizer = TfidfVectorizer()def feature_extraction(msg): mat = pd.DataFrame(tfidf_vectorizer.fit_transform(msg).toarray(),columns=tfidf_vectorizer.get_feature_names(),index=None) return mat</description>
     </item>
     
     <item>
       <title>Train-test-split</title>
-      <link>https://kamal2230.github.io/mlnotes/python/basics/train_test_split/</link>
+      <link>https://kamal2230.github.io/mlnotes/python/pandas/train_test_split/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kamal2230.github.io/mlnotes/python/basics/train_test_split/</guid>
+      <guid>https://kamal2230.github.io/mlnotes/python/pandas/train_test_split/</guid>
       <description>from sklearn.model_selection import train_test_splittrain_x,train_y, test_x,test_y = train_test_split(X, y, test_size=0.</description>
     </item>
     
@@ -147,20 +329,128 @@
     </item>
     
     <item>
-      <title>Append value to a list</title>
-      <link>https://kamal2230.github.io/mlnotes/python/basics/list-append/</link>
+      <title>Stacked Bar Graph</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/stacked-bar-graph/</link>
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kamal2230.github.io/mlnotes/python/basics/list-append/</guid>
-      <description>li = [1, 2, 3]li.append(4)li [1, 2, 3, 4]  </description>
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/stacked-bar-graph/</guid>
+      <description>import matplotlib.pyplot as plt import numpy as np#With error bars N = 5 menMeans = (20, 35, 30, 35, 27) womenMeans = (25, 32, 34, 20, 25) menStd = (2, 3, 4, 1, 2) womenStd = (3, 5, 2, 3, 3) ind = np.arange(N) width = 0.35 p1 = plt.bar(ind, menMeans, width, yerr=menStd) p2 = plt.bar(ind, womenMeans, width, bottom=menMeans, yerr=womenStd) plt.ylabel(&amp;#39;Scores&amp;#39;) plt.title(&amp;#39;Scores by group and gender&amp;#39;) plt.xticks(ind, (&amp;#39;G1&amp;#39;, &amp;#39;G2&amp;#39;, &amp;#39;G3&amp;#39;, &amp;#39;G4&amp;#39;, &amp;#39;G5&amp;#39;)) plt.</description>
     </item>
     
     <item>
       <title>Template</title>
-      <link>https://kamal2230.github.io/mlnotes/python/basics/template/</link>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/template/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/template/</guid>
+      <description>print(&amp;#39;Hello Toronto&amp;#39;) Hello Toronto  print(2) 2  </description>
+    </item>
+    
+    <item>
+      <title>Template</title>
+      <link>https://kamal2230.github.io/mlnotes/python/lightgbm/template/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/lightgbm/template/</guid>
+      <description>print(&amp;#39;Hello Toronto&amp;#39;) Hello Toronto  print(2) 2  </description>
+    </item>
+    
+    <item>
+      <title>Template</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/template/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/template/</guid>
+      <description>print(&amp;#39;Hello Toronto&amp;#39;) Hello Toronto  print(2) 2  </description>
+    </item>
+    
+    <item>
+      <title>Template</title>
+      <link>https://kamal2230.github.io/mlnotes/python/statistics/template/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/statistics/template/</guid>
+      <description>print(&amp;#39;Hello Toronto&amp;#39;) Hello Toronto  print(2) 2  </description>
+    </item>
+    
+    <item>
+      <title>Tfidf Vectorizer</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/tfidf-vectorizer/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/tfidf-vectorizer/</guid>
+      <description>import pandas as pd from sklearn.feature_extraction.text import TfidfVectorizertfidf_vectorizer = TfidfVectorizer()def feature_extraction(msg): mat = pd.DataFrame(tfidf_vectorizer.fit_transform(msg).toarray(),columns=tfidf_vectorizer.get_feature_names(),index=None) return mat</description>
+    </item>
+    
+    <item>
+      <title>Train test split</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/train-test-split/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/train-test-split/</guid>
+      <description>from sklearn.model_selection import train_test_splittrain_x, train_y, test_x, test_y = train_test_split(X, y, test_size=0.3) #0.3 == 30% Test set #Default 25% Test set #My usual value 20% Test set</description>
+    </item>
+    
+    <item>
+      <title>Confusion Matrix</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/confusion-matrix/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/confusion-matrix/</guid>
+      <description>from sklearn.metrics import confusion_matrixC = &amp;#34;Cat&amp;#34; A = &amp;#34;Ant&amp;#34; B = &amp;#34;Bird&amp;#34;true = [C, A, C, C, A, B] pred = [A, A, C, C, A, C]confusion_matrix(true, pred, labels=[A, B, C]) array([[2, 0, 0], [0, 0, 1], [1, 0, 2]])  </description>
+    </item>
+    
+    <item>
+      <title>Example of Regplot in Seaborn</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/regplot-example/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/regplot-example/</guid>
+      <description>import seaborn as snsx_ex = [1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0] y_ex = [0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1]sns.regplot(x = x_ex, y = y_ex, marker = &amp;#39;*&amp;#39;, color = &amp;#39;b&amp;#39;) &amp;lt;AxesSubplot:&amp;gt;  </description>
+    </item>
+    
+    <item>
+      <title>F1 Score example</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/f1-score-example/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/f1-score-example/</guid>
+      <description>from sklearn.metrics import f1_scoretrue = [0, 1, 2, 0, 1, 2] pred = [0, 2, 1, 0, 0, 1]f1_score(true, pred, average=&amp;#39;macro&amp;#39;) 0.26666666666666666  f1_score(true, pred, average=&amp;#39;micro&amp;#39;) 0.3333333333333333  f1_score(true, pred, average=&amp;#39;weighted&amp;#39;) 0.26666666666666666  </description>
+    </item>
+    
+    <item>
+      <title>Method to find best classifier</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/find-the-best-classifier/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/find-the-best-classifier/</guid>
+      <description>from sklearn.naive_bayes import MultinomialNB from sklearn.naive_bayes import GaussianNB from sklearn.naive_bayes import BernoulliNB from sklearn.svm import SVC from sklearn.neural_network import MLPClassifier from sklearn.ensemble import AdaBoostClassifier from sklearn.tree import DecisionTreeClassifier from sklearn.ensemble import RandomForestClassifier from sklearn.ensemble import GradientBoostingClassifier from sklearn.linear_model import LogisticRegression from sklearn.model_selection import GridSearchCV from sklearn.metrics import f1_score, confusion_matrixclassifiers = { &amp;#39;mnb&amp;#39;: MultinomialNB(), &amp;#39;gnb&amp;#39;: GaussianNB(), &amp;#39;svm1&amp;#39;: SVC(kernel=&amp;#39;linear&amp;#39;), &amp;#39;svm2&amp;#39;: SVC(kernel=&amp;#39;rbf&amp;#39;), &amp;#39;svm3&amp;#39;: SVC(kernel=&amp;#39;sigmoid&amp;#39;), #FOR SVM USE HYPERPARAMETER TUNING TO BETTER UNDERSTAND WHAT TO TAKE &amp;#39;mlp1&amp;#39;: MLPClassifier(), &amp;#39;mlp2&amp;#39;: MLPClassifier(hidden_layer_sizes=[100,100]), &amp;#39;ada&amp;#39;: AdaBoostClassifier(), &amp;#39;dtc&amp;#39;: DecisionTreeClassifer(), &amp;#39;rfc&amp;#39;: RandomForestClassifer(), &amp;#39;gbc&amp;#39;: GradientBoostingClassifer(), &amp;#39;lr&amp;#39;: LogisticRegression() }f1_scores = dict() for classifier in classifiers: clf = classifiers[classifier] clf.</description>
+    </item>
+    
+    <item>
+      <title>Template</title>
+      <link>https://kamal2230.github.io/mlnotes/python/pandas/template/</link>
       <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://kamal2230.github.io/mlnotes/python/basics/template/</guid>
+      <guid>https://kamal2230.github.io/mlnotes/python/pandas/template/</guid>
+      <description>print(&amp;#39;Hello Toronto&amp;#39;) Hello Toronto  print(2) 2  </description>
+    </item>
+    
+    <item>
+      <title>Template</title>
+      <link>https://kamal2230.github.io/mlnotes/python/scipy/template/</link>
+      <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/scipy/template/</guid>
+      <description>print(&amp;#39;Hello Toronto&amp;#39;) Hello Toronto  print(2) 2  </description>
+    </item>
+    
+    <item>
+      <title>Template</title>
+      <link>https://kamal2230.github.io/mlnotes/python/spacy/template/</link>
+      <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/spacy/template/</guid>
       <description>print(&amp;#39;Hello Toronto&amp;#39;) Hello Toronto  print(2) 2  </description>
     </item>
     

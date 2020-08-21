@@ -3,6 +3,66 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/statistics/ecdf/</loc>
+    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/sklearn/kfold-validation/</loc>
+    <lastmod>2020-08-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/lightgbm/simple-lightgbm/</loc>
+    <lastmod>2020-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/sklearn/extra-trees/</loc>
+    <lastmod>2020-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/correlation-heatmap/</loc>
+    <lastmod>2020-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/plot-importance-of-lightgbm-model/</loc>
+    <lastmod>2020-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/plot-spearman/</loc>
+    <lastmod>2020-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/scipy/spearman-coefficient/</loc>
+    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/log-of-right-skewed-distribution/</loc>
+    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/categorical-heatmap/</loc>
+    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/size-of-figure/</loc>
+    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/basic-bar-plot/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kamal2230.github.io/mlnotes/python/pandas/defining-null-values/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
   </url>
@@ -18,32 +78,82 @@
   </url>
   
   <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/histogram/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/horizontal-bar-chart/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/joint-plot-matplotlib/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/line-plot/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/plotting-categories/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/categorical-bar-plot/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/subplots/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/grid-spec/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kamal2230.github.io/mlnotes/python/pandas/datetime/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/custom-lambda-dataframe1/</loc>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/violin-plot/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/pandas/custom-lambda-dataframe1/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/column-rename1/</loc>
+    <loc>https://kamal2230.github.io/mlnotes/python/pandas/column-rename1/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/confusion_matrix/</loc>
+    <loc>https://kamal2230.github.io/mlnotes/python/spacy/tokens/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/f1_score/</loc>
+    <loc>https://kamal2230.github.io/mlnotes/python/sklearn/f1_score/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/list_of_classifier/</loc>
+    <loc>https://kamal2230.github.io/mlnotes/python/sklearn/list_of_classifier/</loc>
+    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/spacy/normalize-using-spacy/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -53,22 +163,12 @@
   </url>
   
   <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/regplot_sample/</loc>
+    <loc>https://kamal2230.github.io/mlnotes/python/sklearn/tfidf_vectorizer/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/simple-python/</loc>
-    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/tfidf_vectorizer/</loc>
-    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/train_test_split/</loc>
+    <loc>https://kamal2230.github.io/mlnotes/python/pandas/train_test_split/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -78,18 +178,78 @@
   </url>
   
   <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/list-append/</loc>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/stacked-bar-graph/</loc>
     <lastmod>2020-08-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/basics/template/</loc>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/template/</loc>
+    <lastmod>2020-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/lightgbm/template/</loc>
+    <lastmod>2020-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/sklearn/template/</loc>
+    <lastmod>2020-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/statistics/template/</loc>
+    <lastmod>2020-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/sklearn/tfidf-vectorizer/</loc>
+    <lastmod>2020-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/sklearn/train-test-split/</loc>
+    <lastmod>2020-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/sklearn/confusion-matrix/</loc>
+    <lastmod>2020-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/plots/regplot-example/</loc>
+    <lastmod>2020-08-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/sklearn/f1-score-example/</loc>
+    <lastmod>2020-08-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/sklearn/find-the-best-classifier/</loc>
+    <lastmod>2020-08-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/pandas/template/</loc>
+    <lastmod>2019-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/scipy/template/</loc>
+    <lastmod>2019-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/spacy/template/</loc>
     <lastmod>2019-04-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kamal2230.github.io/mlnotes/</loc>
-    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
