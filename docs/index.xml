@@ -6,10 +6,19 @@
     <description>Recent content on Kamal Khumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kamal2230.github.io/mlnotes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Feature Importance</title>
+      <link>https://kamal2230.github.io/mlnotes/python/pandas/feature-importance/</link>
+      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/pandas/feature-importance/</guid>
+      <description>import pandas as pd import numpy as np import matplotlib.pyplot as plt import seaborn as sns from sklearn.ensemble import RandomForestClassifier from sklearn.preprocessing import LabelEncoderdf = pd.read_csv(&amp;#34;D:/Datasets/Loan/train_original.csv&amp;#34;) df.drop(&amp;#34;Loan_ID&amp;#34;, axis=1, inplace=True) df.dropna(how=&amp;#34;any&amp;#34;, inplace=True) df.sample(5)  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    Gender Married Dependents Education Self_Employed ApplicantIncome CoapplicantIncome LoanAmount Loan_Amount_Term Credit_History Property_Area Loan_Status     153 Male Yes 2 Not Graduate No 2281 0.</description>
+    </item>
     
     <item>
       <title>Custom ECDF Function</title>
@@ -236,15 +245,6 @@ import matplotlib.pyplot as plt plt.Figure.add_axes plt.Figure.add_subplot plt.F
       
       <guid>https://kamal2230.github.io/mlnotes/python/plots/violin-plot/</guid>
       <description>import matplotlib.pyplot as plt import numpy as npimport numpy as np np.random.seed(10) collectn_1 = np.random.normal(100, 10, 200) collectn_2 = np.random.normal(80, 30, 200) collectn_3 = np.random.normal(90, 20, 200) collectn_4 = np.random.normal(70, 25, 200) data_to_plot = [collectn_1, collectn_2, collectn_3, collectn_4] fig, ax = plt.subplots(1, 1) bp = ax.violinplot(data_to_plot) plt.show() </description>
-    </item>
-    
-    <item>
-      <title>Apply Function</title>
-      <link>https://kamal2230.github.io/mlnotes/python/pandas/custom-lambda-dataframe1/</link>
-      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://kamal2230.github.io/mlnotes/python/pandas/custom-lambda-dataframe1/</guid>
-      <description>import pandas as pd import numpy as npd = [&amp;#34;Vachitaya aapuuuuuuuuu&amp;#34;,&amp;#34;Sing in the rain&amp;#34;,&amp;#34;Valikudhu...Aludhuruve&amp;#34;,&amp;#34;Mande Badharam&amp;#34;]df = pd.DataFrame(d, columns = [&amp;#39;Dialogue&amp;#39;]) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    Dialogue     0 Vachitaya aapuuuuuuuuu   1 Sing in the rain   2 Valikudhu...Aludhuruve   3 Mande Badharam     def func(msg): return len(msg)df[&amp;#34;Length&amp;#34;] = df[&amp;#34;Dialogue&amp;#34;].</description>
     </item>
     
     <item>

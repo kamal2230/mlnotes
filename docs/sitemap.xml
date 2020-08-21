@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/pandas/feature-importance/</loc>
+    <lastmod>2020-08-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kamal2230.github.io/mlnotes/python/statistics/ecdf/</loc>
     <lastmod>2020-08-19T00:00:00+00:00</lastmod>
   </url>
@@ -128,11 +133,6 @@
   </url>
   
   <url>
-    <loc>https://kamal2230.github.io/mlnotes/python/pandas/custom-lambda-dataframe1/</loc>
-    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://kamal2230.github.io/mlnotes/python/pandas/column-rename1/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
@@ -249,7 +249,7 @@
   
   <url>
     <loc>https://kamal2230.github.io/mlnotes/</loc>
-    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
