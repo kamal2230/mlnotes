@@ -16,14 +16,14 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Define size of Figure" />
+<meta property="og:title" content="Pivot table" />
 <meta property="og:description" content="-" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://kamal2230.github.io/mlnotes/python/plots/size-of-figure/" /><meta property="article:published_time" content="2020-08-14T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-08-14T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://kamal2230.github.io/mlnotes/python/pandas/pivot-table/" /><meta property="article:published_time" content="2020-09-06T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-09-06T00:00:00&#43;00:00"/>
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Define size of Figure"/>
+<meta name="twitter:title" content="Pivot table"/>
 <meta name="twitter:description" content="-"/>
 <meta name="generator" content="Hugo 0.50" /> 
     
@@ -32,11 +32,11 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Define size of Figure",
-  "url": "https://kamal2230.github.io/mlnotes/python/plots/size-of-figure/",
-  "wordCount": "73",
-  "datePublished": "2020-08-14T00:00:00&#43;00:00",
-  "dateModified": "2020-08-14T00:00:00&#43;00:00",
+  "headline": "Pivot table",
+  "url": "https://kamal2230.github.io/mlnotes/python/pandas/pivot-table/",
+  "wordCount": "140",
+  "datePublished": "2020-09-06T00:00:00&#43;00:00",
+  "dateModified": "2020-09-06T00:00:00&#43;00:00",
   "author": {
     "@type": "Person",
     "name": "Charles"
@@ -45,7 +45,7 @@
 }
 </script> 
 
-    <title>Define size of Figure</title>
+    <title>Pivot table</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -117,15 +117,14 @@ MathJax.Hub.Config({
   <div class="technical_note">
   <header>
       
-    <h1 class="technical_note_title">Define size of Figure</h1>
+    <h1 class="technical_note_title">Pivot table</h1>
     <div class="technical_note_date">
-      <time datetime=" 2020-08-14T00:00:00Z "> 14 Aug 2020</time>
+      <time datetime=" 2020-09-06T00:00:00Z "> 06 Sep 2020</time>
     </div>
   </header>
   <div class="content">
-  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fruits&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;mango&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">],</span> <span class="s1">&#39;price&#39;</span><span class="p">:[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">]}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">df</span></code></pre></div>
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;car data.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span></code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -144,46 +143,144 @@ MathJax.Hub.Config({
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>fruits</th>
-      <th>price</th>
+      <th>Car_Name</th>
+      <th>Year</th>
+      <th>Selling_Price</th>
+      <th>Present_Price</th>
+      <th>Kms_Driven</th>
+      <th>Fuel_Type</th>
+      <th>Seller_Type</th>
+      <th>Transmission</th>
+      <th>Owner</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>apple</td>
-      <td>4</td>
+      <td>ritz</td>
+      <td>2014</td>
+      <td>3.35</td>
+      <td>5.59</td>
+      <td>27000</td>
+      <td>Petrol</td>
+      <td>Dealer</td>
+      <td>Manual</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>banana</td>
-      <td>7</td>
+      <td>sx4</td>
+      <td>2013</td>
+      <td>4.75</td>
+      <td>9.54</td>
+      <td>43000</td>
+      <td>Diesel</td>
+      <td>Dealer</td>
+      <td>Manual</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>mango</td>
-      <td>12</td>
+      <td>ciaz</td>
+      <td>2017</td>
+      <td>7.25</td>
+      <td>9.85</td>
+      <td>6900</td>
+      <td>Petrol</td>
+      <td>Dealer</td>
+      <td>Manual</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>orange</td>
-      <td>10</td>
+      <td>wagon r</td>
+      <td>2011</td>
+      <td>2.85</td>
+      <td>4.15</td>
+      <td>5200</td>
+      <td>Petrol</td>
+      <td>Dealer</td>
+      <td>Manual</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>swift</td>
+      <td>2014</td>
+      <td>4.60</td>
+      <td>6.87</td>
+      <td>42450</td>
+      <td>Diesel</td>
+      <td>Dealer</td>
+      <td>Manual</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;fruits&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">])</span></code></pre></div>
-<pre><code>&lt;BarContainer object of 4 artists&gt;
-</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;Fuel_Type&#39;</span><span class="p">)</span></code></pre></div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<p><img src="size-of-figure_4_1.png" alt="png" /></p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;fruits&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">])</span></code></pre></div>
-<pre><code>&lt;BarContainer object of 4 artists&gt;
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<p><img src="size-of-figure_5_1.png" alt="png" /></p>
-
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Kms_Driven</th>
+      <th>Owner</th>
+      <th>Present_Price</th>
+      <th>Selling_Price</th>
+      <th>Year</th>
+    </tr>
+    <tr>
+      <th>Fuel_Type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CNG</th>
+      <td>42749.000000</td>
+      <td>0.000000</td>
+      <td>6.415000</td>
+      <td>3.100000</td>
+      <td>2013.000000</td>
+    </tr>
+    <tr>
+      <th>Diesel</th>
+      <td>50369.916667</td>
+      <td>0.016667</td>
+      <td>15.814500</td>
+      <td>10.278500</td>
+      <td>2014.000000</td>
+    </tr>
+    <tr>
+      <th>Petrol</th>
+      <td>33528.937238</td>
+      <td>0.050209</td>
+      <td>5.583556</td>
+      <td>3.264184</td>
+      <td>2013.539749</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
 </div>
   <aside>
       

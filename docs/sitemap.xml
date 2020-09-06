@@ -3,7 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/pandas/crosstab/</loc>
+    <lastmod>2020-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kamal2230.github.io/mlnotes/python/pandas/pd-cut/</loc>
+    <lastmod>2020-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamal2230.github.io/mlnotes/python/pandas/pivot-table/</loc>
     <lastmod>2020-09-06T00:00:00+00:00</lastmod>
   </url>
   
