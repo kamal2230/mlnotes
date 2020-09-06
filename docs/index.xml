@@ -6,10 +6,28 @@
     <description>Recent content on Kamal Khumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kamal2230.github.io/mlnotes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cut in pandas</title>
+      <link>https://kamal2230.github.io/mlnotes/python/pandas/pd-cut/</link>
+      <pubDate>Sun, 06 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/pandas/pd-cut/</guid>
+      <description>import pandas as pd import numpy as np import matplotlib.pyplot as pltl = np.arange(1, 20) l array([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])  pd.cut(l, bins=3) [(0.982, 7.0], (0.982, 7.0], (0.982, 7.0], (0.982, 7.0], (0.982, 7.0], ..., (13.0, 19.0], (13.0, 19.0], (13.0, 19.0], (13.0, 19.0], (13.0, 19.0]] Length: 19 Categories (3, interval[float64]): [(0.982, 7.0] &amp;lt; (7.0, 13.0] &amp;lt; (13.</description>
+    </item>
+    
+    <item>
+      <title>Qcut in Pandas</title>
+      <link>https://kamal2230.github.io/mlnotes/python/pandas/qcut/</link>
+      <pubDate>Sun, 06 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/pandas/qcut/</guid>
+      <description>import pandas as pd import numpy as np import matplotlib.pyplot as pltl = np.arange(1, 20) l array([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])  pd.qcut(l, q=[0, 0.2, 0.4, 1.0], labels=[&amp;#34;small&amp;#34;, &amp;#34;medium&amp;#34;, &amp;#34;large&amp;#34;]) [&#39;small&#39;, &#39;small&#39;, &#39;small&#39;, &#39;small&#39;, &#39;medium&#39;, ..., &#39;large&#39;, &#39;large&#39;, &#39;large&#39;, &#39;large&#39;, &#39;large&#39;] Length: 19 Categories (3, object): [&#39;small&#39; &amp;lt; &#39;medium&#39; &amp;lt; &#39;large&#39;]  pd.qcut(l, q=[0, 0.2, 0.</description>
+    </item>
     
     <item>
       <title>Feature Importance</title>
