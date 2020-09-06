@@ -48,6 +48,78 @@
     </item>
     
     <item>
+      <title>Andrews Curves</title>
+      <link>https://kamal2230.github.io/mlnotes/python/pandas/andrews_curves/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/pandas/andrews_curves/</guid>
+      <description># We&amp;#39;ll also import seaborn, a Python graphing library import warnings # current version of seaborn generates a bunch of warnings that we&amp;#39;ll ignore warnings.filterwarnings(&amp;#34;ignore&amp;#34;) import seaborn as sns import matplotlib.pyplot as plt import pandas as pd sns.set(style=&amp;#34;white&amp;#34;, color_codes=True) # Next, we&amp;#39;ll load the Iris flower dataset, which is in the &amp;#34;../input/&amp;#34; directory iris = pd.read_csv(&amp;#34;Iris.csv&amp;#34;) # the iris dataset is now a Pandas DataFrame # Let&amp;#39;s see what&amp;#39;s in the iris data - Jupyter notebooks print the result of the last thing you do iris.</description>
+    </item>
+    
+    <item>
+      <title>GGplot</title>
+      <link>https://kamal2230.github.io/mlnotes/python/plots/ggplot/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/plots/ggplot/</guid>
+      <description>import pandas as pd import matplotlib.pyplot as plt import numpy as npfrom mpl_toolkits.mplot3d import axes3d import matplotlib.pyplot as plt import numpy as np from matplotlib import stylestyle.use(&amp;#39;ggplot&amp;#39;) fig = plt.figure() ax1 = fig.add_subplot(111, projection=&amp;#39;3d&amp;#39;) x3 = [1,2,3,4,5,6,7,8,9,10] y3 = [5,6,7,8,2,5,6,3,7,2] z3 = np.zeros(10) dx = np.ones(10) dy = np.ones(10) dz = [1,2,3,4,5,6,7,8,9,10] ax1.bar3d(x3, y3, z3, dx, dy, dz) ax1.set_xlabel(&amp;#39;x axis&amp;#39;) ax1.set_ylabel(&amp;#39;y axis&amp;#39;) ax1.set_zlabel(&amp;#39;z axis&amp;#39;) plt.show() fig = plt.figure() ax1 = fig.</description>
+    </item>
+    
+    <item>
+      <title>Learning_and_predicting</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/learning_and_predicting/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/learning_and_predicting/</guid>
+      <description>from sklearn import datasets iris = datasets.load_iris() digits = datasets.load_digits()print(digits.data) [[ 0. 0. 5. ... 0. 0. 0.] [ 0. 0. 0. ... 10. 0. 0.] [ 0. 0. 0. ... 16. 9. 0.] ... [ 0. 0. 1. ... 6. 0. 0.] [ 0. 0. 2. ... 12. 0. 0.] [ 0. 0. 10. ... 12. 1. 0.]]  digits.target array([0, 1, 2, ..., 8, 9, 8])  from sklearn import svm clf = svm.</description>
+    </item>
+    
+    <item>
+      <title>Loading_Datasets</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/loading_datasets/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/loading_datasets/</guid>
+      <description>from sklearn import datasets iris = datasets.load_iris() digits = datasets.load_digits()print(digits.data) [[ 0. 0. 5. ... 0. 0. 0.] [ 0. 0. 0. ... 10. 0. 0.] [ 0. 0. 0. ... 16. 9. 0.] ... [ 0. 0. 1. ... 6. 0. 0.] [ 0. 0. 2. ... 12. 0. 0.] [ 0. 0. 10. ... 12. 1. 0.]]  digits.target array([0, 1, 2, ..., 8, 9, 8])  </description>
+    </item>
+    
+    <item>
+      <title>Model_Persistence</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/model_persistence/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/model_persistence/</guid>
+      <description>from sklearn import datasets iris = datasets.load_iris() digits = datasets.load_digits()print(digits.data) [[ 0. 0. 5. ... 0. 0. 0.] [ 0. 0. 0. ... 10. 0. 0.] [ 0. 0. 0. ... 16. 9. 0.] ... [ 0. 0. 1. ... 6. 0. 0.] [ 0. 0. 2. ... 12. 0. 0.] [ 0. 0. 10. ... 12. 1. 0.]]  digits.target array([0, 1, 2, ..., 8, 9, 8])  from sklearn import svm clf = svm.</description>
+    </item>
+    
+    <item>
+      <title>Multilabel_fitting</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/multilabel_fitting/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/multilabel_fitting/</guid>
+      <description>from sklearn.svm import SVC from sklearn.multiclass import OneVsRestClassifier from sklearn.preprocessing import LabelBinarizerX = [[1, 2], [2, 4], [4, 5], [3, 2], [3, 1]] y = [0, 0, 1, 1, 2]classif = OneVsRestClassifier(estimator=SVC(random_state=0)) classif.fit(X, y).predict(X) array([0, 0, 1, 1, 2])  y = LabelBinarizer().fit_transform(y) classif.fit(X, y).predict(X) array([[1, 0, 0], [1, 0, 0], [0, 1, 0], [0, 0, 0], [0, 0, 0]])  from sklearn.preprocessing import MultiLabelBinarizer y = [[0, 1], [0, 2], [1, 3], [0, 2, 3], [2, 4]] y = MultiLabelBinarizer().</description>
+    </item>
+    
+    <item>
+      <title>Refitting</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/refitting/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/refitting/</guid>
+      <description>import numpy as np from sklearn.datasets import load_iris from sklearn.svm import SVC X, y = load_iris(return_X_y=True)clf = SVC() clf.set_params(kernel=&amp;#39;linear&amp;#39;).fit(X, y) SVC(kernel=&#39;linear&#39;)  clf.predict(X[:5]) array([0, 0, 0, 0, 0])  clf.set_params(kernel=&amp;#39;rbf&amp;#39;).fit(X, y) SVC()  clf.predict(X[:5]) array([0, 0, 0, 0, 0])  </description>
+    </item>
+    
+    <item>
+      <title>Type_casting</title>
+      <link>https://kamal2230.github.io/mlnotes/python/sklearn/type_casting/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamal2230.github.io/mlnotes/python/sklearn/type_casting/</guid>
+      <description>import numpy as np from sklearn import random_projection rng = np.random.RandomState(0) X = rng.rand(10, 2000) X = np.array(X, dtype=&amp;#39;float32&amp;#39;) X.dtype dtype(&#39;float32&#39;)  transformer = random_projection.GaussianRandomProjection() X_new = transformer.fit_transform(X) X_new.dtype dtype(&#39;float64&#39;)  from sklearn import datasets from sklearn.svm import SVC iris = datasets.load_iris() clf = SVC() clf.fit(iris.data, iris.target) SVC()  list(clf.predict(iris.data[:3])) [0, 0, 0]  clf.fit(iris.data, iris.target_names[iris.target]) SVC()  list(clf.predict(iris.data[:3])) [&#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;]  </description>
+    </item>
+    
+    <item>
       <title>Feature Importance</title>
       <link>https://kamal2230.github.io/mlnotes/python/pandas/feature-importance/</link>
       <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
